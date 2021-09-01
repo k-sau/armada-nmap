@@ -23,7 +23,7 @@ func main() {
 		*dir = dirname + "/scans/armada/"
 	}
 
-	err := os.MkdirAll(*dir, 700)
+	err := os.MkdirAll(*dir, 0755)
 	if err != nil {
 		log.Println(err)
 	}
