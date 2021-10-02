@@ -5,7 +5,7 @@ Parses the armada output and run the nmap service scan per IP for all open ports
 
 ### Installation
 ```
-GO111MODULE=on go install github.com/k-sau/armada-nmap@latest
+GO111MODULE=on go get github.com/k-sau/armada-nmap@latest
 ```
 
 ### Usage
