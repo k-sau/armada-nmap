@@ -65,7 +65,6 @@ func main() {
 	}
 
 	for i, v := range mm {
-		fmt.Println(i, v)
 		ports := strings.Join(v.Ports, ",")
 		cmd := ""
 
