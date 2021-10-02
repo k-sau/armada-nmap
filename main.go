@@ -69,9 +69,9 @@ func main() {
 		cmd := ""
 
 		if v.IPv6 {
-			cmd = fmt.Sprintf("sudo nmap -6 %s -p %s -oX ~/scans/armada/%s.xml --dns-servers `curl -s https://raw.githubusercontent.com/k-sau/resolvers/master/nmap-resolvers.txt` -Pn -sS -w --host-timeout 20m --script-timeout 22m --open -T4 --max-retries 3 -sV", i, ports, i)
+			cmd = fmt.Sprintf("sudo nmap -6 %s -p %s -oX %s%s.xml --dns-servers `curl -s https://raw.githubusercontent.com/k-sau/resolvers/master/nmap-resolvers.txt` -Pn -sS -w --host-timeout 20m --script-timeout 22m --open -T4 --max-retries 3 -sV", i, ports, *dir, i)
 		} else {
-			cmd = fmt.Sprintf("sudo nmap %s -p %s -oX ~/scans/armada/%s.xml --dns-servers `curl -s https://raw.githubusercontent.com/k-sau/resolvers/master/nmap-resolvers.txt` -Pn -sS --host-timeout 20m --script-timeout 22m --open -T4 --max-retries 3 -sV", i, ports, i)
+			cmd = fmt.Sprintf("sudo nmap %s -p %s -oX %s%s.xml --dns-servers `curl -s https://raw.githubusercontent.com/k-sau/resolvers/master/nmap-resolvers.txt` -Pn -sS --host-timeout 20m --script-timeout 22m --open -T4 --max-retries 3 -sV", i, ports, *dir, i)
 		}
 		wg.Add(1)
 		threads <- cmd
